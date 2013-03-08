@@ -2667,8 +2667,6 @@ local int outb(void *desc, unsigned char *buf, unsigned len)
 #ifndef NOTHREAD
     static thread *wr, *ch;
 
-    (void)desc;
-
     if (g.procs > 1) {
         /* if first time, initialize state and launch threads */
         if (outb_write_more == NULL) {
@@ -2707,6 +2705,8 @@ local int outb(void *desc, unsigned char *buf, unsigned len)
         return 0;
     }
 #endif
+
+    (void)desc;
 
     /* if just one process or no threads, then do it without threads */
     if (len) {
