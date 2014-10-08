@@ -30,7 +30,6 @@ LOCAL_MODULE := libminipigz
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(pigz_src_files)
 LOCAL_C_INCLUDES := $(LOCAL_PATH) external/zlib external/pigz/zopfli
-LOCAL_CFLAGS := -DWITHOUT_ZOPFLI
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
